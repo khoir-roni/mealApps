@@ -21,7 +21,7 @@ class MealDetailScreen extends StatelessWidget {
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(10),
       ),
-      height: MediaQuery.of(context).size.height * 0.4,
+      height: MediaQuery.of(context).size.height * 0.3,
       width: MediaQuery.of(context).size.width * 0.9,
       child: child,
     );
@@ -69,18 +69,23 @@ class MealDetailScreen extends StatelessWidget {
               ListView.builder(
                 itemCount: selectedMeal.steps.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    leading: CircleAvatar(
-                      child: Text('${(index + 1)}'),
-                    ),
-                    title: Text(
-                      '${selectedMeal.steps[index]}',
-                    ),
+                  return Column(
+                    children: [
+                      ListTile(
+                        leading: CircleAvatar(
+                          child: Text('${(index + 1)}'),
+                        ),
+                        title: Text(
+                          '${selectedMeal.steps[index]}',
+                        ),
+                      ),
+                      Divider(),
+                    ],
                   );
                 },
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
           ],
         ),
       ),
