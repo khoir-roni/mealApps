@@ -48,6 +48,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
 
   void _removeMeal(String mealId) {
     setState(() {
+      print('remove meal $mealId');
       displayedMeals.removeWhere((meal) => meal.id == mealId);
     });
   }

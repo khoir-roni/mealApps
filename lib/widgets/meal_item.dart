@@ -66,6 +66,7 @@ class MealItem extends StatelessWidget {
       arguments: id,
     )
         .then((result) {
+      print('selected meal delete $result');
       if (result != null) {
         removeItem(result);
       }
